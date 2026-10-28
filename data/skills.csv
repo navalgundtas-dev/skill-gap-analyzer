@@ -8,3 +8,8 @@ docker,tools,,containers;containerization
 cloud basics,cloud,,azure;aws;cloud services
 system design,architecture,rest api;sql,system architecture;software architecture;distributed systems
 machine learning,ai,python,ml
+software testing,quality,,qa;manual testing;test cases;executing test cases;test reporting
+debugging,fundamentals,,troubleshooting;bug fixing
+programming fundamentals,programming,,programming languages;oop;object oriented programming;software development
+software engineering principles,fundamentals,,sdlc;software development principles
+code review,practices,git,code reviews

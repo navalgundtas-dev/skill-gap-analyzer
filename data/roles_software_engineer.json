@@ -1,0 +1,15 @@
+{
+  "role": "Software Engineer",
+  "level": "fresher",
+  "required": [
+    {"skill": "programming fundamentals", "min_level": 3, "weight": 5},
+    {"skill": "software engineering principles", "min_level": 2, "weight": 4},
+    {"skill": "code review", "min_level": 1, "weight": 3},
+    {"skill": "dsa", "min_level": 3, "weight": 3},
+    {"skill": "git", "min_level": 2, "weight": 2}
+  ],
+  "sources": [
+    "Honeywell, Software Engineering Intern (Bengaluru), via Jobaaj, accessed 28 Oct 2026"
+  ],
+  "notes": "PROVISIONAL, one posting only. Evidence-based: programming fundamentals, software engineering principles, code review (all named by Honeywell). Judgment calls, not from postings: DSA (tested in fresher interviews) and Git (assumed with code review). Add a posting that names specific languages or tools to strengthen this role."
+}

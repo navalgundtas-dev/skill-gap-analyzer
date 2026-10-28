@@ -1,0 +1,13 @@
+{
+  "role": "QA / Software Tester",
+  "level": "fresher",
+  "required": [
+    {"skill": "software testing", "min_level": 3, "weight": 5},
+    {"skill": "debugging", "min_level": 2, "weight": 4},
+    {"skill": "sql", "min_level": 1, "weight": 2}
+  ],
+  "sources": [
+    "VyomWorld (Softsmith), Software Engineer Trainee, via Shine, accessed 28 Oct 2026 (read in full)"
+  ],
+  "notes": "PROVISIONAL, one posting only. Posting titled Software Engineer but content is testing and QA. SQL weight is a judgment call (common in testing roles), not from this posting. Add a second QA posting to confirm."
+}

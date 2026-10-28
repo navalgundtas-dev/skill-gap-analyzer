@@ -1,0 +1,18 @@
+{
+  "role": "Data Analyst",
+  "level": "fresher",
+  "required": [
+    {"skill": "data analysis", "min_level": 2, "weight": 5},
+    {"skill": "sql", "min_level": 3, "weight": 4},
+    {"skill": "excel", "min_level": 3, "weight": 4},
+    {"skill": "data visualization", "min_level": 2, "weight": 4},
+    {"skill": "statistics", "min_level": 2, "weight": 3},
+    {"skill": "python", "min_level": 2, "weight": 2}
+  ],
+  "sources": [
+    "Bytemetrics Solutions, Data Analytics / Analyst Trainee, via Jobaaj, accessed 28 Oct 2026",
+    "Jobaaj.com, Data Analyst Fresher Bengaluru, via Jobrapido, accessed 28 Oct 2026",
+    "Euromonitor International, Associate Data Analyst, via Foundit, accessed 28 Oct 2026"
+  ],
+  "notes": "PROVISIONAL. Only partial descriptions were read. Python weight is a judgment call, not from the postings. Confirm after reading full descriptions."
+}

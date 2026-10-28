@@ -10,3 +10,11 @@ print("Readiness:", r["readiness"])
 print("Unrecognised:", r["unrecognised"])
 for b in r["breakdown"]:
     print(b)
+
+
+from src.recommender import build_learning_path
+
+print()
+print("LEARNING PATH")
+for item in build_learning_path(r["breakdown"]):
+    print(f"{item['step']}. {item['skill']}: {item['reason']}")

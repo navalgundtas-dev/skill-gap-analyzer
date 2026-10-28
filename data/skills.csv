@@ -1,0 +1,10 @@
+skill,category,prerequisites,synonyms
+python,programming,,py;python3
+sql,database,,mysql;postgresql;postgres
+git,tools,,github
+dsa,fundamentals,,data structures;algorithms
+rest api,backend,python,restful api;api design;api development
+docker,tools,,containers;containerization
+cloud basics,cloud,,azure;aws;cloud services
+system design,architecture,rest api;sql,system architecture;software architecture;distributed systems
+machine learning,ai,python,ml

@@ -1,0 +1,20 @@
+{
+  "role": "Backend Developer",
+  "level": "fresher",
+  "required": [
+    {"skill": "system design", "min_level": 1, "weight": 5},
+    {"skill": "cloud basics", "min_level": 1, "weight": 5},
+    {"skill": "python", "min_level": 3, "weight": 4},
+    {"skill": "sql", "min_level": 3, "weight": 4},
+    {"skill": "rest api", "min_level": 2, "weight": 4},
+    {"skill": "docker", "min_level": 1, "weight": 3},
+    {"skill": "dsa", "min_level": 3, "weight": 3},
+    {"skill": "git", "min_level": 2, "weight": 2}
+  ],
+  "sources": [
+    "TLC Backend Developer via Jobsora, accessed 28 Oct 2026",
+    "Whitetable Backend Developer - Python via Hirist, posted 21 Oct 2026",
+    "Dentsuaegis Backend Engineer via NextRaise, accessed 28 Oct 2026"
+  ],
+  "notes": "Weights from skill frequency across 3 postings. min_level set for freshers because postings ask for 2-9 years. Python weight: a backend language is expected in all 3, Python named in 1. DSA weight is a judgment call (tested in interviews, not listed in postings)."
+}

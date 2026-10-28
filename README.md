@@ -1,17 +1,12 @@
 # Student Skill Gap Analyzer
 
 An explainable system that compares a student's real skill levels with what job roles require, shows the gap, and recommends a prioritised learning path.
-
-Built for the AKHYAN Level 2 Internship, Project 04: *AI-Based Student Skill Gap Analysis System*.
-
-> **Status:** in development (3-day build). Sections marked *(to be filled)* are completed as the project progresses.
-
 ---
 
 ## 1. Problem Definition
 
 ### The situation
-Many students in tier 2 and tier 3 colleges have limited exposure to what companies actually hire for. They do not know which skills are in demand, which topics interviews cover, or how important fundamentals such as DSA and aptitude are. Placement guidance often arrives late and is generic ("practice DSA"), without showing a student where they personally stand.
+Many students have limited exposure to what companies actually hire for. They do not know which skills are in demand, which topics interviews cover, or how important fundamentals such as DSA and aptitude are. Placement guidance often arrives late and is generic ("practice DSA"), without showing a student where they personally stand.
 
 ### The problem
 1. **Thin resumes.** Students often list few real skills, sometimes none that match a role.

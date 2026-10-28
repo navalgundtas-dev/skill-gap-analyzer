@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-from src.normaliser import normalise
+from src.fuzzy_matcher import match_skill
 
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 
@@ -17,30 +17,36 @@ def load_roles(data_dir=DATA_DIR):
 
 
 def clean_student_skills(raw_skills):
-    """Normalise skill names. Returns (known, unrecognised).
+    """Match skill names. Returns (known, unrecognised, to_confirm).
 
-    If two names map to the same skill (e.g. 'JS' and 'JavaScript'),
-    keep the higher level.
+    Confident matches count toward the score. Uncertain matches are NOT
+    scored; they are returned so the student can confirm them.
     """
-    known, unrecognised = {}, []
+    known, unrecognised, to_confirm = {}, [], []
     for name, level in raw_skills.items():
         if not 0 <= level <= 5:
             raise ValueError(f"Level for '{name}' must be 0-5, got {level}")
-        canonical = normalise(name)
-        if canonical is None:
+        match = match_skill(name)
+        if match is None:
             unrecognised.append(name)
+        elif match["method"] == "confirm":
+            to_confirm.append({"typed": name,
+                               "suggestion": match["skill"],
+                               "score": match["score"]})
         else:
+            canonical = match["skill"]
             known[canonical] = max(level, known.get(canonical, 0))
-    return known, unrecognised
+    return known, unrecognised, to_confirm
 
 
 def compute_gap(raw_skills, role):
     """Compare a student's skills with a role.
 
     Returns readiness %, totals, a per-skill breakdown (biggest weighted
-    shortfall first, ties broken by higher weight), and unrecognised skills.
+    shortfall first, ties broken by higher weight), unrecognised skills,
+    and skills waiting for the student to confirm.
     """
-    student, unrecognised = clean_student_skills(raw_skills)
+    student, unrecognised, to_confirm = clean_student_skills(raw_skills)
 
     breakdown = []
     weighted_gap = 0
@@ -70,4 +76,5 @@ def compute_gap(raw_skills, role):
         "max_gap": max_gap,
         "breakdown": breakdown,
         "unrecognised": unrecognised,
+        "to_confirm": to_confirm,
     }

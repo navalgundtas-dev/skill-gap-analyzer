@@ -49,3 +49,17 @@ def test_tie_break_prefers_higher_weight():
     # git:    shortfall 2 x weight 2 = 4
     # python: shortfall 1 x weight 4 = 4  (same score, higher weight)
     assert result["breakdown"][0]["skill"] == "python"
+
+
+def test_confident_typo_counts_toward_score():
+    role = {"role": "T", "required": [
+        {"skill": "machine learning", "min_level": 3, "weight": 5}]}
+    result = compute_gap({"machin learning": 3}, role)
+    assert result["readiness"] == 100.0
+
+def test_uncertain_match_is_flagged_not_scored():
+    role = {"role": "T", "required": [
+        {"skill": "python", "min_level": 3, "weight": 5}]}
+    result = compute_gap({"Pythn": 3}, role)
+    assert result["readiness"] == 0.0
+    assert result["to_confirm"][0]["suggestion"] == "python"

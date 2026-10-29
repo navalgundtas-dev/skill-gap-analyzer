@@ -4,3 +4,10 @@ streamlit
 scikit-learn
 pytest
 pandas
+fastapi
+uvicorn
+httpx
+scikit-learn
+pytest
+pandas
+streamlit

@@ -238,3 +238,27 @@ Expected limitations include:
 ## 14. Author
 
 Tasmiya Navalgund, B.E. Computer Science and Engineering, KLE Institute of Technology, Hubballi.
+
+
+## Findings and Design Notes
+
+### 1. Weighted shortfall favours high-level skills
+The ranking multiplies shortfall by weight, so a skill with a high minimum level (for example DSA, level 3) can outrank a more important skill with a low minimum level (for example cloud basics, level 1). This is intended: the score reflects how much effort a gap represents.
+
+### 2. Tie-breaking order
+Skills are ordered by priority score, then by higher role weight, then alphabetically. The alphabetical step has no meaning; it exists only so results are identical on every run.
+
+### 3. Three match outcomes
+Skill text is matched in two steps: a synonym dictionary first, then TF-IDF fuzzy matching.
+- Score 0.75 or above: accepted and counted.
+- Score 0.5 to 0.75: not counted; the student is asked to confirm.
+- Score below 0.5: rejected and listed as unrecognised.
+
+Reason for the thresholds: i chose them because in test no wrong skills were accepted automatically and  uncertain matches go to the student instead of being guessed
+
+### 4. Data limitations
+- Fresher job postings are often vague or use generic titles, so some role weights are judgment calls. Each role file records its sources and which parts are judgment.
+- The QA and Software Engineer roles are based on one posting each and are provisional.
+- Letter-based fuzzy matching cannot catch pronunciation variants such as "sequel" for SQL.
+- Thresholds were tuned on about 15 test inputs, so they are reasonable but not proven.
+- Prerequisites that are not gaps for a role are ignored by the recommender.

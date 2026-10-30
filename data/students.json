@@ -1,0 +1,184 @@
+[
+  {
+    "name": "Student 01",
+    "target_role": "Backend Developer",
+    "skills": {
+      "system design": 2,
+      "cloud basics": 1,
+      "python": 3,
+      "sql": 3,
+      "rest api": 2,
+      "docker": 3,
+      "dsa": 4,
+      "git": 2
+    }
+  },
+  {
+    "name": "Student 02",
+    "target_role": "Data Analyst",
+    "skills": {
+      "statistics": 2,
+      "python": 1
+    }
+  },
+  {
+    "name": "Student 03",
+    "target_role": "Backend Developer",
+    "skills": {
+      "cloud basics": 1,
+      "python": 2,
+      "git": 1
+    }
+  },
+  {
+    "name": "Student 04",
+    "target_role": "QA / Software Tester",
+    "skills": {
+      "software testing": 3,
+      "debugging": 4,
+      "sql": 2
+    }
+  },
+  {
+    "name": "Student 05",
+    "target_role": "QA / Software Tester",
+    "skills": {
+      "software testing": 3,
+      "debugging": 3,
+      "sql": 2
+    }
+  },
+  {
+    "name": "Student 06",
+    "target_role": "Software Engineer",
+    "skills": {}
+  },
+  {
+    "name": "Student 07",
+    "target_role": "Backend Developer",
+    "skills": {
+      "system design": 2,
+      "cloud basics": 1,
+      "python": 4,
+      "postgre sql": 5,
+      "rest api": 3,
+      "docker": 3,
+      "dsa": 5,
+      "git": 3
+    }
+  },
+  {
+    "name": "Student 08",
+    "target_role": "Software Engineer",
+    "skills": {
+      "programming fundamentals": 3,
+      "software engineering principles": 3,
+      "code review": 3,
+      "dsa": 5,
+      "git": 4
+    }
+  },
+  {
+    "name": "Student 09",
+    "target_role": "QA / Software Tester",
+    "skills": {
+      "debugging": 1
+    }
+  },
+  {
+    "name": "Student 10",
+    "target_role": "QA / Software Tester",
+    "skills": {
+      "sql": 1
+    }
+  },
+  {
+    "name": "Student 11",
+    "target_role": "QA / Software Tester",
+    "skills": {
+      "sql": 1
+    }
+  },
+  {
+    "name": "Student 12",
+    "target_role": "Data Analyst",
+    "skills": {
+      "data analysis": 3,
+      "sql": 3,
+      "excel": 3,
+      "statistics": 3,
+      "python": 3
+    }
+  },
+  {
+    "name": "Student 13",
+    "target_role": "Backend Developer",
+    "skills": {
+      "system design": 1,
+      "pythn": 4,
+      "sql": 4,
+      "rest api": 4,
+      "git": 3
+    }
+  },
+  {
+    "name": "Student 14",
+    "target_role": "QA / Software Tester",
+    "skills": {
+      "postgre sql": 2
+    }
+  },
+  {
+    "name": "Student 15",
+    "target_role": "Data Analyst",
+    "skills": {
+      "data analysis": 3,
+      "postgre sql": 3,
+      "excel": 4,
+      "data visualization": 2,
+      "statistics": 2,
+      "python": 3
+    }
+  },
+  {
+    "name": "Student 16",
+    "target_role": "Data Analyst",
+    "skills": {
+      "data analysis": 2,
+      "statistics": 2
+    }
+  },
+  {
+    "name": "Student 17",
+    "target_role": "Software Engineer",
+    "skills": {
+      "software engineering principles": 1,
+      "code review": 1,
+      "git": 2
+    }
+  },
+  {
+    "name": "Student 18",
+    "target_role": "Data Analyst",
+    "skills": {}
+  },
+  {
+    "name": "Student 19",
+    "target_role": "Backend Developer",
+    "skills": {
+      "system design": 1,
+      "sql": 4,
+      "rest api": 4,
+      "dsa": 3
+    }
+  },
+  {
+    "name": "Student 20",
+    "target_role": "QA / Software Tester",
+    "skills": {
+      "software testing": 4,
+      "debugging": 2,
+      "sql": 1
+    }
+  }
+]

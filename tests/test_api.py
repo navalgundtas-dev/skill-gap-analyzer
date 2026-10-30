@@ -23,3 +23,8 @@ def test_analyse_returns_score_and_path():
 def test_unknown_role_returns_404():
     response = client.post("/analyse", json={"role": "Wizard", "skills": {}})
     assert response.status_code == 404
+
+def test_invalid_skill_level_returns_422():
+    response = client.post("/analyse", json={
+        "role": "Backend Developer", "skills": {"python": 9}})
+    assert response.status_code == 422

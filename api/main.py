@@ -1,6 +1,9 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 
+from fastapi import File, UploadFile
+from src.resume_parser import extract_text, find_skills 
+
 from src.gap_engine import compute_gap, load_roles
 from src.recommender import build_learning_path
 
@@ -48,3 +51,22 @@ def batch_summary():
     with open(STUDENTS_FILE, encoding="utf-8") as f:
         students = json.load(f)
     return summarise(students, ROLES)
+
+@app.post("/parse-resume")
+async def parse_resume(file: UploadFile = File(...)):
+    """Find claimed skills in a PDF resume. Levels are set to 1 until confirmed."""
+    if not (file.filename or "").lower().endswith(".pdf"):
+        raise HTTPException(status_code=422, detail="Only PDF files are supported")
+    try:
+        text = extract_text(file.file)
+    except Exception:
+        raise HTTPException(status_code=422, detail="Could not read this PDF")
+    if not text.strip():
+        raise HTTPException(status_code=422,
+                            detail="No text found. Scanned PDFs are not supported")
+    skills = find_skills(text)
+    return {
+        "skills_found": skills,
+        "suggested_levels": {s: 1 for s in skills},
+        "note": "Resume parsing detects claimed skills only. Confirm your real level for each.",
+    }

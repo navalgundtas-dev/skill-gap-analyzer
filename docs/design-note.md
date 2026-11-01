@@ -262,3 +262,4 @@ Reason for the thresholds: i chose them because in test no wrong skills were acc
 - Letter-based fuzzy matching cannot catch pronunciation variants such as "sequel" for SQL.
 - Thresholds were tuned on about 15 test inputs, so they are reasonable but not proven.
 - Prerequisites that are not gaps for a role are ignored by the recommender.
+- Keyword matching can produce false matches on generic words. The synonym “analysis” was removed for this reason, at the cost of missing resumes that use only that word.

@@ -214,6 +214,8 @@ Expected limitations include:
 - The prerequisite map is hand-written and incomplete.
 - Fuzzy matching can produce wrong guesses on rare skills.
 
+Keyword matching can produce false matches on generic words. The synonym “analysis” was removed for this reason, at the cost of missing resumes that use only that word.
+
 ---
 
 ## 12. Future Improvements

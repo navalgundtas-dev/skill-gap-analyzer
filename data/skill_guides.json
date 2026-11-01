@@ -1,0 +1,800 @@
+{
+  "python": {
+    "what": "General-purpose programming language used for backend, data and AI work.",
+    "levels": {
+      "1": {
+        "learn": [
+          "What Python is used for",
+          "Install Python and run a script",
+          "Variables and basic data types"
+        ],
+        "build": "Print a greeting and do simple maths",
+        "hours": 3
+      },
+      "2": {
+        "learn": [
+          "Conditions and loops",
+          "Functions",
+          "Lists, dictionaries and sets",
+          "Reading and writing files"
+        ],
+        "build": "A command-line to-do list or marks calculator",
+        "hours": 15
+      },
+      "3": {
+        "learn": [
+          "Object-oriented programming (classes)",
+          "Exceptions and error handling",
+          "Modules and virtual environments",
+          "Writing tests with pytest",
+          "Using libraries through pip"
+        ],
+        "build": "A small multi-file project with tests (for example a quiz app or expense tracker)",
+        "hours": 30
+      },
+      "4": {
+        "learn": [
+          "Decorators, generators and comprehensions",
+          "Type hints",
+          "Debugging and profiling",
+          "Working with APIs and JSON",
+          "Clean code and project structure"
+        ],
+        "build": "A project others can install and run, with tests and a README",
+        "hours": 40
+      }
+    }
+  },
+  "sql": {
+    "what": "The language used to read and change data stored in relational databases.",
+    "levels": {
+      "1": {
+        "learn": [
+          "What a database and a table are",
+          "Rows, columns and primary keys"
+        ],
+        "build": "Draw a student table on paper and mark its keys",
+        "hours": 2
+      },
+      "2": {
+        "learn": [
+          "SELECT, WHERE and ORDER BY",
+          "INSERT, UPDATE and DELETE",
+          "COUNT, SUM and AVG",
+          "GROUP BY and HAVING"
+        ],
+        "build": "Answer 20 practice questions on one sample database",
+        "hours": 10
+      },
+      "3": {
+        "learn": [
+          "JOINs (inner and left)",
+          "Subqueries",
+          "Designing tables and relationships",
+          "Indexes and why they speed up queries",
+          "Normalisation basics"
+        ],
+        "build": "Design a small database (for example a library system) and write the queries for it",
+        "hours": 20
+      },
+      "4": {
+        "learn": [
+          "Window functions",
+          "CTEs",
+          "Query plans and optimisation",
+          "Transactions",
+          "Connecting SQL from Python"
+        ],
+        "build": "Analyse a real dataset using SQL only and explain your queries",
+        "hours": 25
+      }
+    }
+  },
+  "git": {
+    "what": "Version control: tracks changes to code and lets teams work together safely.",
+    "levels": {
+      "1": {
+        "learn": [
+          "What version control is",
+          "Repository, commit and branch"
+        ],
+        "build": "Explain in your own words why teams use Git",
+        "hours": 2
+      },
+      "2": {
+        "learn": [
+          "init, add, commit, push and pull",
+          "Cloning a repository",
+          "Writing clear commit messages"
+        ],
+        "build": "Put one of your projects on GitHub with meaningful commits",
+        "hours": 4
+      },
+      "3": {
+        "learn": [
+          "Branching and merging",
+          "Pull requests",
+          "Resolving merge conflicts",
+          "Using .gitignore"
+        ],
+        "build": "Contribute to a team project or open source through a pull request",
+        "hours": 8
+      },
+      "4": {
+        "learn": [
+          "Rebase and cherry-pick",
+          "Fixing mistakes with reset and revert",
+          "Branching strategies",
+          "CI basics with GitHub Actions"
+        ],
+        "build": "A repo with a branch workflow that runs tests automatically",
+        "hours": 10
+      }
+    }
+  },
+  "dsa": {
+    "what": "Data structures and algorithms: how to organise data and solve problems efficiently. Tested in most fresher interviews.",
+    "levels": {
+      "1": {
+        "learn": [
+          "What data structures and algorithms are",
+          "Big-O idea (time and space)"
+        ],
+        "build": "Explain why searching a sorted list is faster than an unsorted one",
+        "hours": 3
+      },
+      "2": {
+        "learn": [
+          "Arrays and strings",
+          "Linked lists, stacks and queues",
+          "Searching and sorting",
+          "Hash maps"
+        ],
+        "build": "Solve 30 easy problems",
+        "hours": 30
+      },
+      "3": {
+        "learn": [
+          "Recursion and backtracking",
+          "Trees and binary search trees",
+          "Graphs: BFS and DFS",
+          "Two pointers and sliding window",
+          "Basic dynamic programming"
+        ],
+        "build": "Solve about 100 problems (easy and medium) and explain each approach aloud",
+        "hours": 80
+      },
+      "4": {
+        "learn": [
+          "Heaps and priority queues",
+          "Tries",
+          "Advanced dynamic programming",
+          "Shortest paths",
+          "Timed mock interviews"
+        ],
+        "build": "Solve medium and hard problems under a timer and take 5 mock interviews",
+        "hours": 80
+      }
+    }
+  },
+  "rest api": {
+    "what": "How programs talk to each other over the web using HTTP and JSON.",
+    "levels": {
+      "1": {
+        "learn": [
+          "What an API is",
+          "Client and server",
+          "HTTP methods: GET, POST, PUT and DELETE"
+        ],
+        "build": "Explain what happens when you open a web page",
+        "hours": 3
+      },
+      "2": {
+        "learn": [
+          "Status codes",
+          "JSON requests and responses",
+          "Calling a public API from Python",
+          "Using Postman or curl"
+        ],
+        "build": "Fetch data from a public API and display it",
+        "hours": 8
+      },
+      "3": {
+        "learn": [
+          "Building an API with FastAPI or Flask",
+          "Routes, validation and error responses",
+          "Connecting to a database",
+          "Authentication basics (tokens)",
+          "Testing the API"
+        ],
+        "build": "A CRUD API for a small app, with tests and documentation",
+        "hours": 25
+      },
+      "4": {
+        "learn": [
+          "Pagination, filtering and versioning",
+          "Rate limiting and caching",
+          "Security: input validation, password hashing and HTTPS",
+          "OpenAPI documentation",
+          "Logging and error monitoring"
+        ],
+        "build": "A deployed API with authentication, tests and documentation",
+        "hours": 30
+      }
+    }
+  },
+  "docker": {
+    "what": "Packages an app and everything it needs into a container that runs the same everywhere.",
+    "levels": {
+      "1": {
+        "learn": [
+          "What a container is and why teams use them",
+          "Image versus container"
+        ],
+        "build": "Explain Docker to a friend in two sentences",
+        "hours": 2
+      },
+      "2": {
+        "learn": [
+          "Installing Docker and running existing images",
+          "Basic commands: run, ps, stop and logs",
+          "Writing a simple Dockerfile"
+        ],
+        "build": "Containerise a small Python app",
+        "hours": 8
+      },
+      "3": {
+        "learn": [
+          "Volumes and networking",
+          "docker compose with two services (app and database)",
+          "Environment variables",
+          "Keeping images small"
+        ],
+        "build": "Run your API and its database together with compose",
+        "hours": 15
+      },
+      "4": {
+        "learn": [
+          "Multi-stage builds",
+          "Image security basics",
+          "Pushing images to a registry",
+          "Kubernetes concepts at an intro level",
+          "Docker in a CI pipeline"
+        ],
+        "build": "A CI pipeline that builds and pushes your image",
+        "hours": 20
+      }
+    }
+  },
+  "cloud basics": {
+    "what": "Renting computing, storage and databases over the internet (AWS, Azure, Google Cloud).",
+    "levels": {
+      "1": {
+        "learn": [
+          "What the cloud is: IaaS, PaaS and SaaS",
+          "Regions and why they matter"
+        ],
+        "build": "Explain the difference between IaaS, PaaS and SaaS with one example each",
+        "hours": 2
+      },
+      "2": {
+        "learn": [
+          "Creating a free-tier account (AWS, Azure or GCP)",
+          "Compute: a virtual machine",
+          "Storage: buckets",
+          "Setting billing alerts"
+        ],
+        "build": "Launch a VM and store a file in a bucket",
+        "hours": 8
+      },
+      "3": {
+        "learn": [
+          "Deploying a web app to the cloud",
+          "Managed databases",
+          "IAM: users and permissions",
+          "Basic networking and security groups",
+          "Monitoring and logs"
+        ],
+        "build": "Deploy your API with a managed database",
+        "hours": 20
+      },
+      "4": {
+        "learn": [
+          "Load balancing and auto scaling",
+          "Serverless functions",
+          "Infrastructure as code basics",
+          "Cost optimisation",
+          "Entry certification (AZ-900 or AWS Cloud Practitioner)"
+        ],
+        "build": "A scalable, monitored deployment of one of your projects",
+        "hours": 30
+      }
+    }
+  },
+  "system design": {
+    "what": "Planning how the parts of a large application fit together and scale.",
+    "levels": {
+      "1": {
+        "learn": [
+          "What system design means",
+          "Client, server, database and cache"
+        ],
+        "build": "Name the parts involved when you open a food-delivery app",
+        "hours": 2
+      },
+      "2": {
+        "learn": [
+          "Drawing architecture diagrams",
+          "Monolith versus microservices",
+          "SQL versus NoSQL",
+          "What a load balancer and an API gateway do"
+        ],
+        "build": "Draw the architecture of an app you use every day",
+        "hours": 8
+      },
+      "3": {
+        "learn": [
+          "Vertical versus horizontal scaling",
+          "Caching (for example Redis)",
+          "Message queues",
+          "Database indexing and replication",
+          "The CAP theorem idea"
+        ],
+        "build": "Design a URL shortener on paper and explain the trade-offs",
+        "hours": 20
+      },
+      "4": {
+        "learn": [
+          "Consistency models",
+          "Rate limiting and API gateways",
+          "Observability: logs, metrics and tracing",
+          "Designing well-known systems (chat, news feed, ride booking)",
+          "Estimating load and storage"
+        ],
+        "build": "Present a full design for a chat app, including failure cases",
+        "hours": 40
+      }
+    }
+  },
+  "machine learning": {
+    "what": "Teaching computers to find patterns in data and make predictions.",
+    "levels": {
+      "1": {
+        "learn": [
+          "What ML is: supervised, unsupervised and reinforcement learning",
+          "Training data, features and labels",
+          "The idea of overfitting"
+        ],
+        "build": "Explain the difference between supervised and unsupervised learning with an example",
+        "hours": 4
+      },
+      "2": {
+        "learn": [
+          "NumPy and pandas for data",
+          "Training a first model with scikit-learn",
+          "Linear and logistic regression",
+          "Train and test split",
+          "Accuracy, precision and recall"
+        ],
+        "build": "Predict house prices or classify iris flowers",
+        "hours": 25
+      },
+      "3": {
+        "learn": [
+          "Decision trees, random forests, k-NN and SVM",
+          "Cross-validation",
+          "Feature engineering and scaling",
+          "Handling imbalanced data",
+          "Hyperparameter tuning",
+          "Confusion matrix, ROC-AUC and F1"
+        ],
+        "build": "An end-to-end project on a real dataset: cleaning, several models, a fair comparison and a written report",
+        "hours": 60
+      },
+      "4": {
+        "learn": [
+          "Neural network basics with PyTorch or TensorFlow",
+          "CNNs for images and transfer learning",
+          "Model explainability (SHAP, feature importance)",
+          "Experiment tracking",
+          "Serving a model through an API and containerising it"
+        ],
+        "build": "A deployed model with an API and a short write-up of its limits and failure cases",
+        "hours": 80
+      }
+    }
+  },
+  "software testing": {
+    "what": "Checking that software works as expected and finding defects before users do.",
+    "levels": {
+      "1": {
+        "learn": [
+          "What software testing is and why it matters",
+          "Bug versus defect versus failure"
+        ],
+        "build": "Explain why testing saves money",
+        "hours": 2
+      },
+      "2": {
+        "learn": [
+          "Test cases: steps and expected results",
+          "Manual testing types: smoke, sanity and regression",
+          "Writing a bug report",
+          "SDLC and STLC"
+        ],
+        "build": "Write 20 test cases for a login page and 3 bug reports",
+        "hours": 12
+      },
+      "3": {
+        "learn": [
+          "Test design: boundary values and equivalence partitioning",
+          "API testing with Postman",
+          "Unit testing with pytest or JUnit",
+          "Intro to Selenium or Playwright",
+          "Test plan and traceability"
+        ],
+        "build": "A small automated test suite for a real website or API",
+        "hours": 30
+      },
+      "4": {
+        "learn": [
+          "Test automation frameworks",
+          "CI integration",
+          "Performance testing intro (JMeter)",
+          "Test data and environments",
+          "Exploratory testing"
+        ],
+        "build": "Automated tests that run on every commit",
+        "hours": 35
+      }
+    }
+  },
+  "debugging": {
+    "what": "Finding out why code misbehaves and fixing it systematically.",
+    "levels": {
+      "1": {
+        "learn": [
+          "Reading an error message and traceback",
+          "Syntax, runtime and logic errors"
+        ],
+        "build": "Explain what each line of a traceback tells you",
+        "hours": 2
+      },
+      "2": {
+        "learn": [
+          "Print debugging",
+          "Using a debugger: breakpoints and stepping",
+          "Reproducing a bug before fixing it"
+        ],
+        "build": "Fix 10 intentionally broken programs",
+        "hours": 8
+      },
+      "3": {
+        "learn": [
+          "Reading logs",
+          "Isolating a bug by narrowing the cause",
+          "Writing a failing test first, then fixing",
+          "Bisecting to find when a bug appeared"
+        ],
+        "build": "Find and fix a bug in an unfamiliar open-source project",
+        "hours": 15
+      },
+      "4": {
+        "learn": [
+          "Profilers for performance problems",
+          "Debugging concurrency and network issues",
+          "Post-mortems: root cause and prevention"
+        ],
+        "build": "Write a short post-mortem for a bug you fixed",
+        "hours": 20
+      }
+    }
+  },
+  "programming fundamentals": {
+    "what": "The core ideas shared by every language: variables, control flow, functions and objects.",
+    "levels": {
+      "1": {
+        "learn": [
+          "What a program is",
+          "Variables, data types, input and output"
+        ],
+        "build": "Write a program that asks for your name and greets you",
+        "hours": 3
+      },
+      "2": {
+        "learn": [
+          "Conditions, loops and functions",
+          "Arrays and strings",
+          "Basic problem solving"
+        ],
+        "build": "Solve 20 beginner problems in one language",
+        "hours": 20
+      },
+      "3": {
+        "learn": [
+          "Object-oriented programming: classes, inheritance, polymorphism",
+          "Exception handling",
+          "File handling",
+          "One language in depth (Python, Java or C++)",
+          "Small multi-file projects"
+        ],
+        "build": "A multi-file project such as a library management system",
+        "hours": 50
+      },
+      "4": {
+        "learn": [
+          "Design patterns: Singleton, Factory and Observer",
+          "Clean code and refactoring",
+          "Unit tests",
+          "Memory and performance basics",
+          "Reading and extending other people's code"
+        ],
+        "build": "Add a feature and tests to an existing open-source project",
+        "hours": 50
+      }
+    }
+  },
+  "software engineering principles": {
+    "what": "How professional teams plan, build, review and maintain software.",
+    "levels": {
+      "1": {
+        "learn": [
+          "What the SDLC is",
+          "Agile and Scrum in one page"
+        ],
+        "build": "Explain the stages of the SDLC",
+        "hours": 2
+      },
+      "2": {
+        "learn": [
+          "Requirements and user stories",
+          "UML basics: use case and class diagrams",
+          "Version control basics",
+          "Testing levels"
+        ],
+        "build": "Write 5 user stories and a use case diagram for a project",
+        "hours": 8
+      },
+      "3": {
+        "learn": [
+          "SOLID principles",
+          "DRY, KISS and YAGNI",
+          "Code reviews",
+          "Design documents",
+          "The idea of CI/CD"
+        ],
+        "build": "Write a design note for a project and have someone review it",
+        "hours": 20
+      },
+      "4": {
+        "learn": [
+          "Design patterns",
+          "Refactoring",
+          "Technical debt",
+          "Estimation and planning",
+          "Documentation and API design"
+        ],
+        "build": "Lead a small team project using sprints and reviews",
+        "hours": 30
+      }
+    }
+  },
+  "code review": {
+    "what": "Reading a teammate's changes and giving useful feedback before they are merged.",
+    "levels": {
+      "1": {
+        "learn": [
+          "What a code review is and why teams do it"
+        ],
+        "build": "Explain what reviewers look for",
+        "hours": 1
+      },
+      "2": {
+        "learn": [
+          "Reading a pull request",
+          "Leaving clear, polite comments",
+          "What reviewers check: correctness, readability and tests"
+        ],
+        "build": "Review a friend's project and write 5 comments",
+        "hours": 4
+      },
+      "3": {
+        "learn": [
+          "Review checklists",
+          "Responding to review feedback",
+          "Spotting bugs, security and style issues",
+          "Keeping pull requests small and focused"
+        ],
+        "build": "Give and receive 5 real pull request reviews",
+        "hours": 8
+      },
+      "4": {
+        "learn": [
+          "Reviewing for design and maintainability",
+          "Mentoring through reviews",
+          "Automating style checks with linters and CI"
+        ],
+        "build": "Set up linting and a pull request template in a repo",
+        "hours": 8
+      }
+    }
+  },
+  "excel": {
+    "what": "Spreadsheets for cleaning, summarising and presenting data.",
+    "levels": {
+      "1": {
+        "learn": [
+          "Workbook, sheet, cell and formula",
+          "Basic formatting"
+        ],
+        "build": "Build a simple marks sheet",
+        "hours": 2
+      },
+      "2": {
+        "learn": [
+          "SUM, AVERAGE, COUNT and IF",
+          "Sorting and filtering",
+          "Basic charts",
+          "Absolute versus relative references"
+        ],
+        "build": "A monthly expense tracker with a chart",
+        "hours": 8
+      },
+      "3": {
+        "learn": [
+          "VLOOKUP, XLOOKUP and INDEX-MATCH",
+          "Pivot tables",
+          "Conditional formatting",
+          "Data cleaning: duplicates and text functions",
+          "Data validation"
+        ],
+        "build": "Clean a messy dataset and build a pivot-table summary",
+        "hours": 20
+      },
+      "4": {
+        "learn": [
+          "Power Query",
+          "Dashboards with slicers",
+          "Basic macros or Office Scripts",
+          "Dynamic arrays",
+          "Financial and statistical functions"
+        ],
+        "build": "An automated dashboard that refreshes from raw data",
+        "hours": 25
+      }
+    }
+  },
+  "statistics": {
+    "what": "The maths of drawing reliable conclusions from data.",
+    "levels": {
+      "1": {
+        "learn": [
+          "Mean, median and mode",
+          "Numerical versus categorical data"
+        ],
+        "build": "Find the mean, median and mode of your own marks",
+        "hours": 3
+      },
+      "2": {
+        "learn": [
+          "Variance and standard deviation",
+          "The normal distribution",
+          "Probability basics",
+          "Correlation versus causation"
+        ],
+        "build": "Describe a dataset using five summary numbers",
+        "hours": 12
+      },
+      "3": {
+        "learn": [
+          "Sampling and the central limit theorem",
+          "Hypothesis testing and p-values",
+          "Confidence intervals",
+          "t-tests and chi-square tests",
+          "Regression basics"
+        ],
+        "build": "Run a hypothesis test on a real dataset and explain the result in plain words",
+        "hours": 30
+      },
+      "4": {
+        "learn": [
+          "A/B test design",
+          "Multiple testing and bias",
+          "Bayesian thinking at an intro level",
+          "Time series basics",
+          "Effect size and power"
+        ],
+        "build": "Design and analyse an A/B test",
+        "hours": 35
+      }
+    }
+  },
+  "data visualization": {
+    "what": "Turning data into clear charts and dashboards that people understand quickly.",
+    "levels": {
+      "1": {
+        "learn": [
+          "Why charts help",
+          "Chart types: bar, line, pie and scatter"
+        ],
+        "build": "Pick the right chart for three small examples",
+        "hours": 2
+      },
+      "2": {
+        "learn": [
+          "Choosing the right chart",
+          "Making charts in Excel or Google Sheets",
+          "Labels, colours and titles"
+        ],
+        "build": "Three clear charts from one dataset",
+        "hours": 6
+      },
+      "3": {
+        "learn": [
+          "Power BI or Tableau basics",
+          "Dashboards with filters",
+          "Python plotting with matplotlib or seaborn",
+          "Storytelling with data",
+          "Avoiding misleading charts"
+        ],
+        "build": "A dashboard that answers one business question",
+        "hours": 20
+      },
+      "4": {
+        "learn": [
+          "Interactive dashboards",
+          "DAX or calculated fields",
+          "Designing for non-technical audiences",
+          "Data modelling for BI",
+          "Performance and refresh"
+        ],
+        "build": "A published dashboard used by a real or realistic stakeholder",
+        "hours": 30
+      }
+    }
+  },
+  "data analysis": {
+    "what": "Asking questions of data and turning the answers into decisions.",
+    "levels": {
+      "1": {
+        "learn": [
+          "What data analysis is",
+          "Question, data, insight"
+        ],
+        "build": "Write one question a company could answer with its sales data",
+        "hours": 2
+      },
+      "2": {
+        "learn": [
+          "Cleaning data with Excel or pandas",
+          "Summarising with pivot tables or groupby",
+          "Spotting missing values and outliers"
+        ],
+        "build": "Analyse a small CSV and write three findings",
+        "hours": 12
+      },
+      "3": {
+        "learn": [
+          "Exploratory data analysis (EDA)",
+          "SQL for analysis",
+          "Visualising findings",
+          "Framing business questions",
+          "Writing a short report with recommendations"
+        ],
+        "build": "An end-to-end analysis of a public dataset with a written summary",
+        "hours": 35
+      },
+      "4": {
+        "learn": [
+          "Cohort and funnel analysis",
+          "Statistical tests",
+          "Automating reports",
+          "Data quality checks",
+          "Presenting to non-technical stakeholders"
+        ],
+        "build": "A portfolio case study with a presentation",
+        "hours": 40
+      }
+    }
+  }
+}

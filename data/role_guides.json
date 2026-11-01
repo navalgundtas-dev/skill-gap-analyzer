@@ -1,0 +1,92 @@
+{
+  "Backend Developer": {
+    "summary": "Backend developers build the part of an application users never see: servers, APIs and databases.",
+    "employers_expect": [
+      "A backend language (often Python, Java or Node.js) with solid fundamentals",
+      "SQL and the ability to design simple tables",
+      "Building and using REST APIs",
+      "Git and teamwork basics",
+      "Awareness of cloud, containers and how systems scale"
+    ],
+    "interview_focus": [
+      "Data structures and algorithms problems",
+      "SQL queries and joins",
+      "Explaining a project you built and why you designed it that way",
+      "Basic system design",
+      "Debugging a short piece of code"
+    ],
+    "note": "The postings we read asked for 2 to 9 years of experience. For freshers, employers mostly test fundamentals, DSA and one real project, so the levels here are set lower than those postings. Curated by the project author from general industry knowledge and the job postings collected for this project. It is a guide, not an official standard. Review it with a mentor."
+  },
+  "Data Analyst": {
+    "summary": "Data analysts clean data, find patterns and explain what they mean so teams can decide.",
+    "employers_expect": [
+      "Strong spreadsheet skills (pivot tables, lookups, charts)",
+      "Basic SQL for pulling data",
+      "Turning messy data into clear insights",
+      "Charts and dashboards (Power BI or Tableau is a plus)",
+      "Curiosity, clear writing and communication"
+    ],
+    "interview_focus": [
+      "SQL queries and joins",
+      "Excel tasks such as pivot tables and lookups",
+      "A small case study: what would you check first?",
+      "Explaining a chart in plain words",
+      "Basic statistics questions"
+    ],
+    "note": "In the postings we read, SQL and Python were often listed as basic or optional for fresher roles, while spreadsheets and insight skills were required. Curated by the project author from general industry knowledge and the job postings collected for this project. It is a guide, not an official standard. Review it with a mentor."
+  },
+  "QA / Software Tester": {
+    "summary": "Testers make sure software works before users see it, by designing tests and reporting defects.",
+    "employers_expect": [
+      "Writing and running test cases",
+      "Clear bug reports",
+      "Debugging and test reporting",
+      "Understanding of the software and testing life cycles",
+      "Basic SQL and API testing are a plus"
+    ],
+    "interview_focus": [
+      "Write test cases for a login page",
+      "The bug life cycle",
+      "Manual versus automation testing",
+      "Basic SQL queries",
+      "Severity versus priority"
+    ],
+    "note": "Based on one posting, so this role is provisional. Curated by the project author from general industry knowledge and the job postings collected for this project. It is a guide, not an official standard. Review it with a mentor."
+  },
+  "Software Engineer": {
+    "summary": "Software engineers design, build and maintain applications, working in teams with reviews and tests.",
+    "employers_expect": [
+      "Programming fundamentals in at least one language",
+      "Data structures and algorithms",
+      "Object-oriented programming",
+      "Git and working with code reviews",
+      "Software engineering principles such as SOLID and clean code"
+    ],
+    "interview_focus": [
+      "Coding rounds on DSA",
+      "Object-oriented design questions",
+      "Your projects, in depth",
+      "Core subjects: operating systems, databases and networks",
+      "Problem-solving approach"
+    ],
+    "note": "The fresher postings we read were vague (for example 'programming languages' without naming one), so this role is provisional. Curated by the project author from general industry knowledge and the job postings collected for this project. It is a guide, not an official standard. Review it with a mentor."
+  },
+  "ML Engineer": {
+    "summary": "ML engineers train, evaluate and ship models that learn from data.",
+    "employers_expect": [
+      "Strong Python and data handling (NumPy and pandas)",
+      "Core ML algorithms and how to evaluate them honestly",
+      "Statistics: distributions, testing and sampling",
+      "SQL for getting data",
+      "Ability to put a model behind an API"
+    ],
+    "interview_focus": [
+      "ML concepts: overfitting, bias and variance, metrics",
+      "Python coding",
+      "A deep dive into one ML project",
+      "Statistics and probability questions",
+      "How you would handle imbalanced or messy data"
+    ],
+    "note": "This role is provisional: its weights are the author's estimate and were not counted from job postings. Curated by the project author from general industry knowledge and the job postings collected for this project. It is a guide, not an official standard. Review it with a mentor."
+  }
+}

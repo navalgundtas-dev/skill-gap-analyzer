@@ -11,7 +11,14 @@ SAMPLES = [
     ("I enjoy hiking and photography", set()),
     ("financial analysis of the market", set()),
     ("shipping containers at the port", set()),
+    ("Developed a REST API using Flask and MySQL", {"rest api", "python", "sql"}),
+    ("Deployed the project on AWS using Docker containers", {"cloud basics", "docker"}),
+    ("Solved 200 problems on LeetCode covering arrays and trees", {"dsa"}),
+    ("Created dashboards in Tableau and cleaned data in Excel", {"data visualization", "excel"}),
+    ("Wrote test cases and reported bugs using Jira", {"software testing", "debugging"}),
+    ("Strong communication and teamwork, quick learner", set()),
 ]
+
 
 tp = fp = fn = 0
 for text, expected in SAMPLES:

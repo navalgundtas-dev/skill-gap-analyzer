@@ -1,0 +1,45 @@
+{
+  "role": "ML Engineer",
+  "level": "fresher",
+  "required": [
+    {
+      "skill": "python",
+      "min_level": 3,
+      "weight": 5
+    },
+    {
+      "skill": "machine learning",
+      "min_level": 3,
+      "weight": 5
+    },
+    {
+      "skill": "statistics",
+      "min_level": 3,
+      "weight": 4
+    },
+    {
+      "skill": "sql",
+      "min_level": 2,
+      "weight": 3
+    },
+    {
+      "skill": "dsa",
+      "min_level": 2,
+      "weight": 3
+    },
+    {
+      "skill": "git",
+      "min_level": 2,
+      "weight": 3
+    },
+    {
+      "skill": "data visualization",
+      "min_level": 2,
+      "weight": 2
+    }
+  ],
+  "sources": [
+    "No job postings read yet"
+  ],
+  "notes": "PROVISIONAL. Weights and levels are the author's judgment, not counted from postings. Replace them with counts from 2 or 3 fresher ML Engineer postings."
+}

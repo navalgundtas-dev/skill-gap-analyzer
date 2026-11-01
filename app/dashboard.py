@@ -13,6 +13,8 @@ sys.path.insert(0, str(ROOT))
 from src.auth import init_db, login, register
 from src.batch import summarise
 from src.gap_engine import compute_gap, load_roles
+from src.guides import (LEVEL_NAMES, expected_proof, importance_label,
+                        load_role_guides, load_skill_guides, roadmap_for)
 from src.jd_parser import role_from_jd
 from src.recommender import build_learning_path
 from src.resume_parser import extract_text, find_skills
@@ -20,6 +22,8 @@ from src.resume_parser import extract_text, find_skills
 st.set_page_config(page_title="Skill Gap Analyzer", page_icon="🦊", layout="wide")
 init_db()
 ROLES = load_roles()
+SKILL_GUIDES = load_skill_guides()
+ROLE_GUIDES = load_role_guides()
 
 MASCOT = "🦊"
 
@@ -38,8 +42,12 @@ LEVELS = [(0, "Seedling", "🌱"), (25, "Explorer", "🧭"), (50, "Climber", "�
 CSS = """
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600;800;900&display=swap');
-html, body, .stApp, .stApp * { font-family: 'Nunito', sans-serif; }
-h1, h2, h3 { font-weight: 900 !important; }
+html, body, .stApp, .stMarkdown, [data-testid="stMarkdownContainer"], p, label, h1, h2, h3, h4,
+button, input, textarea, .card, .bubble, .hero, .step { font-family: 'Nunito', sans-serif; }
+span[data-testid="stIconMaterial"], .material-icons, [class*="material-symbols"] {
+  font-family: 'Material Symbols Rounded', 'Material Icons' !important;
+}
+h1, h2, h3, h4 { font-weight: 900 !important; }
 .block-container { padding-top: 2rem; max-width: 1200px; }
 
 div.stButton > button {
@@ -78,7 +86,7 @@ div.stButton > button:active { transform: translateY(4px); box-shadow: 0 1px 0 #
 @keyframes grow { from { width: 0; } }
 .small { color: #777777; font-size: 14px; font-weight: 600; }
 
-.skillhead { font-size: 18px; font-weight: 800; display: flex; justify-content: space-between; align-items: center; }
+.skillhead { font-size: 18px; font-weight: 800; display: flex; justify-content: space-between; align-items: center; gap: 10px; }
 .stars { font-size: 12px; }
 .bar { height: 14px; background: #EEEEEE; border-radius: 10px; overflow: hidden; margin: 8px 0 4px 0; }
 .barfill { height: 100%; border-radius: 10px; animation: grow 1s ease-out both; }
@@ -104,6 +112,9 @@ div.stButton > button:active { transform: translateY(4px); box-shadow: 0 1px 0 #
 .lb .who { min-width: 210px; font-weight: 800; }
 .lb .bar { flex: 1; margin: 0; }
 .why { background: #FFF8DC; border-color: #FFC800; box-shadow: 0 4px 0 #FFC800; font-weight: 800; }
+.build { background: #F0FAE6; border-color: #A5ED6E; box-shadow: 0 4px 0 #A5ED6E; }
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear { display: none !important; }
 </style>
 """
 
@@ -150,6 +161,15 @@ def mascot_says(readiness):
     return "Move the sliders to your honest levels. No fake skills, only real growth! 🌱"
 
 
+def importance_note(role):
+    if role.get("sources") == ["Pasted by user"]:
+        return "Importance rises with how often the skill appears in the job description you pasted."
+    if "PROVISIONAL" in role.get("notes", ""):
+        return ("Importance is an estimate for this role (provisional). "
+                "It has not yet been counted from job postings.")
+    return "Importance comes from how often the skill appears in the job postings collected for this role."
+
+
 def score_card(result):
     r = result["readiness"]
     (_, name, icon), upcoming = level_of(r)
@@ -181,7 +201,7 @@ def skill_rows(breakdown):
             f'{esc(b["skill"])} {status}</span><span class="stars">{stars}</span></div>'
             f'<div class="bar"><div class="barfill" style="width:{pct}%;background:{color}"></div></div>'
             f'<div class="small">You: level {b["have"]} &nbsp;·&nbsp; Needed: level {b["need"]} '
-            f'&nbsp;·&nbsp; Importance: {b["weight"]}/5</div></div>')
+            f'&nbsp;·&nbsp; Importance: {importance_label(b["weight"])} ({b["weight"]}/5)</div></div>')
     md("".join(parts))
 
 
@@ -206,7 +226,81 @@ def journey(path):
     md("".join(parts))
 
 
-def show_result(result, tag):
+def role_overview(role_name, role):
+    guide = ROLE_GUIDES.get(role_name)
+    if guide is None:
+        return
+    with st.expander(f"🏢 What the industry expects from a {role_name}", expanded=True):
+        md(f'<div class="card">{esc(guide["summary"])}</div>')
+        left, right = st.columns(2)
+        with left:
+            st.markdown("**✅ What employers expect from a fresher**")
+            for item in guide["employers_expect"]:
+                st.markdown(f"- {item}")
+        with right:
+            st.markdown("**🎤 What interviews focus on**")
+            for item in guide["interview_focus"]:
+                st.markdown(f"- {item}")
+
+        st.markdown("**📏 Skills ranked by importance, with the level expected**")
+        rows = []
+        for req in sorted(role["required"], key=lambda r: -r["weight"]):
+            lvl = req["min_level"]
+            proof = expected_proof(req["skill"], lvl, SKILL_GUIDES)
+            proof_line = f" &nbsp;·&nbsp; Proof you are there: {esc(proof)}" if proof else ""
+            rows.append(
+                f'<div class="card"><div class="skillhead"><span>{em(req["skill"])} '
+                f'{esc(req["skill"])}</span><span>{importance_label(req["weight"])} '
+                f'<span class="stars">{"⭐" * req["weight"]}</span></span></div>'
+                f'<div class="small">Expected level: {lvl} ({LEVEL_NAMES.get(lvl, "")}){proof_line}</div></div>')
+        md("".join(rows))
+        st.caption(importance_note(role))
+        st.caption(guide["note"])
+
+
+def full_roadmap(result, role, tag):
+    path = build_learning_path(result["breakdown"])
+    if not path:
+        return
+    st.subheader("📚 Your full roadmap: what exactly to learn")
+    plan = []
+    total = 0
+    for item in path:
+        road = roadmap_for(item["skill"], item["have"], item["need"], SKILL_GUIDES)
+        plan.append((item, road))
+        if road:
+            total += road["total_hours"]
+    weeks = max(1, round(total / 14))
+    md(f'<div class="card">⏱️ Roughly <b>{total} hours</b> of study in total. At 2 hours a day '
+       f'that is about <b>{weeks} weeks</b>. These are rough estimates, so adjust them to your pace.</div>')
+
+    for item, road in plan:
+        skill = item["skill"]
+        hours = road["total_hours"] if road else 0
+        title = (f'{item["step"]}. {em(skill)} {skill} · '
+                 f'{importance_label(item["weight"])} · about {hours} h')
+        with st.expander(title, expanded=(item["step"] == 1)):
+            md(f'<div class="card"><div class="skillhead"><span>Industry importance</span>'
+               f'<span>{importance_label(item["weight"])} '
+               f'<span class="stars">{"⭐" * item["weight"]}</span></span></div>'
+               f'<div class="small">{esc(importance_note(role))}</div>'
+               f'<div class="small"><b>You are at level {item["have"]}. '
+               f'This role expects level {item["need"]}.</b></div></div>')
+            if road is None:
+                st.info("There is no learning guide for this skill yet.")
+                continue
+            st.caption(road["what"])
+            for s in road["steps"]:
+                keys = [f"rm:{tag}:{skill}:{s['level']}:{i}" for i in range(len(s["learn"]))]
+                done = sum(1 for k in keys if st.session_state.get(k, False))
+                st.markdown(f"#### Level {s['level']} · {s['name']} · about {s['hours']} h")
+                for key, topic in zip(keys, s["learn"]):
+                    st.checkbox(topic, key=key)
+                st.progress(done / len(keys))
+                md(f'<div class="card build">🛠️ <b>Build this to prove it:</b> {esc(s["build"])}</div>')
+
+
+def show_result(result, tag, role):
     hero(mascot_says(result["readiness"]))
     why = st.session_state.get("why", "").strip()
     if why:
@@ -228,9 +322,7 @@ def show_result(result, tag):
         st.subheader("🗺️ Your quest map")
         journey(build_learning_path(result["breakdown"]))
 
-    if result["readiness"] >= 75 and tag not in st.session_state.celebrated:
-        st.session_state.celebrated.add(tag)
-        st.balloons()
+    full_roadmap(result, role, tag)
 
 
 def parse_extra(text):
@@ -261,6 +353,7 @@ def sliders_for(role, prefix=""):
 def student_view():
     role_name = st.selectbox("🎯 Target role", list(ROLES))
     role = ROLES[role_name]
+    role_overview(role_name, role)
     st.text_input("💛 Who are you doing this for? (optional, I will remind you)", key="why")
 
     with st.expander("📄 Upload your resume (optional)"):
@@ -281,11 +374,12 @@ def student_view():
                            "Set your honest level below.")
 
     st.subheader("🎚️ Rate your honest level")
-    st.caption("0 = none · 1 = heard of it · 3 = built something · 5 = can teach it")
+    st.caption("0 = none · 1 = heard of it · 2 = followed tutorials · 3 = built something · "
+               "4 = can build alone · 5 = can teach it")
     raw = sliders_for(role)
     extra = st.text_input("✍️ Other skills, typed freely (example: pythn=3, postgre sql=2)")
     raw.update(parse_extra(extra))
-    show_result(compute_gap(raw, role), "role:" + role_name)
+    show_result(compute_gap(raw, role), "role:" + role_name, role)
 
 
 def jd_view():
@@ -303,7 +397,7 @@ def jd_view():
     st.dataframe(pd.DataFrame(role["required"]), hide_index=True)
     st.subheader("🎚️ Rate your honest level for each")
     raw = sliders_for(role, prefix="jd:")
-    show_result(compute_gap(raw, role), "jd")
+    show_result(compute_gap(raw, role), "jd", role)
 
 
 def mentor_view():
@@ -349,7 +443,6 @@ def mentor_view():
 # ---------- app ----------
 md(CSS)
 st.session_state.setdefault("user", None)
-st.session_state.setdefault("celebrated", set())
 
 if st.session_state.user is None:
     hero("Hi! I am your skill coach. Let us find your gaps and turn them into a quest. "
@@ -374,7 +467,6 @@ if st.session_state.user is None:
             try:
                 register(nu, npw, nrole, mentor_code=code)
                 st.success("Account created! Now log in from the first tab. 🎉")
-                st.balloons()
             except ValueError as e:
                 st.error(str(e))
     st.stop()
@@ -387,9 +479,10 @@ with st.sidebar:
         st.session_state.user = None
         st.rerun()
 
-views = ["🎓 My quest", "📋 Job description quest"]
 if user["role"] == "mentor":
-    views.append("👩‍🏫 Class view")
+    views = ["👩‍🏫 Class view", "🎓 Preview the student quest"]
+else:
+    views = ["🎓 My quest", "📋 Job description quest"]
 view = st.sidebar.radio("Where to?", views)
 
 st.title("Skill Gap Analyzer")

@@ -11,3 +11,6 @@ scikit-learn
 pytest
 pandas
 streamlit
+bcrypt
+pdfplumber
+python-multipart
